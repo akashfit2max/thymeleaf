@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>
+		the member is <span th:style="${isActive} ? 'color:green' : 'color:red'" th:text="${isActive} ? ACTIVE : INACTICE"></span>
+	</h1>
+
+	<h1>
+		the gender is <span th:if="${gender} == 'M'">Male</span>
+	</h1>
+
+	<h1 th:unless="${generd}=='M' ">female</h1>
+</body>
+</html>

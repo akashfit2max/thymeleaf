@@ -7,7 +7,16 @@
 <body>
 	<h1>about akash kumar sahoo</h1>
 	<h1>we are learning spring boot</h1>
-	
-	<h1>owener name is <span th:></span></h1>
+
+	<h1>
+		owner name is <span th:text="${ #strings.toUpperCase(name)}"></span>
+	</h1>
+	<h1 th:text="${currentDate}"></h1>
+
+	<div th:with="a=5,b=6,n=${name}">
+		<h1 th:text="${a}"></h1>
+		<h1 th:text="'the value of b is' + ${b}"></h1>
+		<h1 th:text="'the sum of '+${a}+' and '+${b}+' is'+${a+b} "></h1>
+	</div>
 </body>
 </html>
