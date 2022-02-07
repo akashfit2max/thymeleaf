@@ -9,10 +9,15 @@
 		the member is <span th:style="${isActive} ? 'color:green' : 'color:red'" th:text="${isActive} ? ACTIVE : INACTICE"></span>
 	</h1>
 
-	<h1>
-		the gender is <span th:if="${gender} == 'M'">Male</span>
-	</h1>
+	<h1 th:if="${gender} == 'M'">Male</h1>
 
 	<h1 th:unless="${generd}=='M' ">female</h1>
+
+	<div th:switch="${#lists.size(num)}">
+		<h1 th:case="'0'">List contains zero elements</h1>
+		<h1 th:case="'1'">List contains 1 element</h1>
+		<h1 th:case="*">List contains more than one element</h1>
+	</div>
+
 </body>
 </html>

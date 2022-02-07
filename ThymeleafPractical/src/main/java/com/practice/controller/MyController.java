@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.thymeleaf.expression.Lists;
 
 @Controller
 public class MyController {
@@ -34,13 +35,27 @@ public class MyController {
 		model.addAttribute("isActive", true);
 		return "cpage";
 	}
-	
+
 //	if unless
-	
+
 	@GetMapping("/isunless")
 	public String isunless(Model model) {
 		model.addAttribute("gender", "F");
 		return "cpage";
+	}
+
+//	swith statement
+	@GetMapping("/switch")
+	public String switchStatement(Model model) {
+		List<Integer> of = List.of(12, 13, 23, 25);
+		model.addAttribute("num", of);
+		return "cpage";
+	}
+
+//	replace,insert,include
+	@GetMapping("/replacing")
+	public String replacing() {
+		return "service";
 	}
 
 }
