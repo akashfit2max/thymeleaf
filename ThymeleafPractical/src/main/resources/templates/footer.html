@@ -5,8 +5,10 @@
 <title>Document</title>
 </head>
 <body>
-	<footer id=fragmented th:fragment="fo1">
+	<footer id=fragmented th:fragment="fo1(title,subtitle)">
 		<div class="container">
+			<h1 th:text="${title}"></h1>
+			<h2 th:text="${subtitle}"></h2>
 			<h3>this is the footer</h3>
 			<h3>contact us no +917299456223</h3>
 		</div>

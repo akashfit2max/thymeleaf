@@ -8,7 +8,12 @@
 	<h1>this is service page</h1>
 	<!-- 	addding footer -->
 
-	<footer id=hosttag th:include="footer::fo1"> </footer>
+	<!-- <footer id=hosttag th:replace="footer::fo1('this is title','this is subtitle')"> </footer> -->
+
+	<!-- <footer id=hosttag th:replace="footer::fo1('this is title','this is subtitle')"> </footer> -->
+
+	<footer id=hosttag th:replace="footer::fo1(${title},${subtitle})"> </footer>
+
 </body>
 </html>
 

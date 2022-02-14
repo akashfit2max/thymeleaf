@@ -1,5 +1,6 @@
 package com.practice.controller;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -54,8 +55,15 @@ public class MyController {
 
 //	replace,insert,include
 	@GetMapping("/replacing")
-	public String replacing() {
+	public String replacing(Model model) {
+		model.addAttribute("title", "this is akash title");
+		model.addAttribute("subtitle", LocalDateTime.now().toString());
 		return "service";
+	}
+
+	@GetMapping("/newabout")
+	public String newabout() {
+		return "aboutnew";
 	}
 
 }
